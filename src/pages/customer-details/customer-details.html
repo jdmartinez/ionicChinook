@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title>{{selectedItem.firstName}} {{selectedItem.lastName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+    <ion-item>
+      <ion-avatar item-left>
+          <img [src]="selectedItem.avatar">
+      </ion-avatar>
+      <h2>{{selectedItem.getFullName()}}</h2>
+      <p>{{selectedItem.getFullAddress()}}</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="mail" item-left></ion-icon>
+      <h2>{{selectedItem.email}}</h2>
+      <p>Personal eMail</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="call" item-left></ion-icon>
+      <h2>{{selectedItem.phone}}</h2>
+      <p>Phone</p>
+    </ion-item>
+
+    <ion-item *ngIf="selectedItem.fax">
+      <ion-icon name="send" item-left></ion-icon>
+      <h2>{{selectedItem.fax}}</h2>
+      <p>Fax</p>
+    </ion-item>
+
+    <div id="map"></div>
+
+  </ion-card>
+</ion-content>

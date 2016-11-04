@@ -1,0 +1,14 @@
+page-customer-details {
+    ion-card {
+        #map {
+            width: 100%;
+            height: 550px;
+            opacity: 0;
+            transition: opacity 150ms ease-in;
+
+            &.show-map {
+                opacity: 1;
+            }
+        }
+    }
+}

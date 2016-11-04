@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Customers</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <!-- Customer list //-->
+    <ion-list>
+        <ion-list-header *ngIf="customers">
+          {{customers.length}} customers
+        </ion-list-header>
+        <button ion-item *ngFor="let customer of customers" (click)="showDetails(customer)">
+            <ion-avatar item-left>
+              <img [src]="customer.avatar">
+            </ion-avatar>
+            <h2>{{customer.firstName}} {{customer.lastName}}</h2>
+            <p>{{customer.address}}</p>
+        </button>
+    </ion-list>
+</ion-content>

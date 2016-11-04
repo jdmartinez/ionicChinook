@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Customers</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-row>
+
+        <ion-col width-33>
+            <!-- Customer list //-->
+            <ion-list>
+                <ion-list-header *ngIf="customers">
+                    {{customers.length}} customers
+                </ion-list-header>
+                <button ion-item *ngFor="let customer of customers" (click)="showDetails(customer)">
+                    <ion-avatar item-left>
+                    <img [src]="customer.avatar">
+                    </ion-avatar>
+                    <h2>{{customer.firstName}} {{customer.lastName}}</h2>
+                    <p>{{customer.address}}</p>
+                </button>
+            </ion-list>
+        </ion-col>
+
+        <!-- Customer details //-->
+        <ion-col width-67>
+            <ion-card *ngIf="selected">
+
+                <ion-item>
+                    <ion-avatar item-left>
+                        <img [src]="selected.avatar">
+                    </ion-avatar>
+                    <h2>{{selected.getFullName()}}</h2>
+                    <p>{{selected.getFullAddress()}}</p>
+                </ion-item>
+
+                <ion-item>
+                    <ion-icon name="mail" item-left></ion-icon>
+                    <h2>{{selected.email}}</h2>
+                    <p>Personal eMail</p>
+                </ion-item>
+
+                <ion-item>
+                    <ion-icon name="call" item-left></ion-icon>
+                    <h2>{{selected.phone}}</h2>
+                    <p>Phone</p>
+                </ion-item>
+
+                <ion-item *ngIf="selected.fax">
+                    <ion-icon name="send" item-left></ion-icon>
+                    <h2>{{selected.fax}}</h2>
+                    <p>Fax</p>
+                </ion-item>
+
+                <google-map [address]="selected.getFullAddress()"></google-map>
+
+            </ion-card>
+        </ion-col>
+
+    </ion-row>
+
+</ion-content>
