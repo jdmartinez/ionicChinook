@@ -60,13 +60,15 @@ export class GoogleMapApi {
      * @memberOf GoogleMapApi
      */
     setCenter(location: MapLocation) {
+        let center = new google.maps.LatLng(location.latitude, location.longitude);
+
         if (location.address) {
             Geocoder.getLatLng(location.address).subscribe(latLng => {
-                this.map.setCenter(latLng);
+                center = latLng;
             });
-        } else {
-            this.map.setCenter(new google.maps.LatLng(location.latitude, location.longitude));
         }
+
+        this.map.setCenter(center);
     }
 
     /**
