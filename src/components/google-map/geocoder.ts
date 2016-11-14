@@ -19,8 +19,6 @@ export class Geocoder {
      * @memberOf GoogleMap
      */
     static getLatLng(address: string): Observable<google.maps.LatLng> {
-        console.log("Getting latitude and longitude for - " + address);
-
         if (!this.geocoder) this.geocoder  = new google.maps.Geocoder();
 
         return Observable.create((observer: Observer<google.maps.LatLng>) => {
@@ -29,8 +27,8 @@ export class Geocoder {
                     observer.next(results[0].geometry.location);
                     observer.complete();
                 } else {
-                    console.log(results);
-                    console.log(status);
+                    console.error(results);
+                    console.error(status);
                     observer.error({});
                 }
             });
