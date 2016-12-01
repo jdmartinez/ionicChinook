@@ -1,8 +1,15 @@
+$selected-background-color: #CFD8DC;
+
+$full-content: 100%;
+$position-absolute: absolute;
+
+$customer-list-width: 380px;
+
 page-customers {
 
-    ion-content {
-        .scroll-content {
-            overflow-y: hidden;
+    .no-scroll {
+       .scroll-content {
+            overflow: hidden !important;
         }
     }
 
@@ -17,6 +24,23 @@ page-customers {
                 opacity: 1;
             }
         }
+    }
+
+    .selected {
+        background-color: $selected-background-color !important;
+    }
+
+    #customer-list {
+        width: $customer-list-width;
+        height: $full-content;
+        position: $position-absolute;
+    }
+
+    #customer-detail {
+        left: $customer-list-width;
+        width: $full-content;
+        height: $full-content;
+        position: $position-absolute;
     }
 
 }
