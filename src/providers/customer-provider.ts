@@ -1,4 +1,3 @@
-import { Serializable } from './../models/serializable';
 import { Customer } from './../models/customer';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';

@@ -1,8 +1,6 @@
-import { Observable } from 'rxjs/Rx';
-import { MyApp } from './../../app/app.component';
 import { Geolocation } from 'ionic-native';
 import { Component, ElementRef, Input, Output, EventEmitter, ViewChild, NgZone } from '@angular/core';
-import { NavController, IONIC_DIRECTIVES } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { ConnectivityService } from './../../providers/connectivity-service';
 
 import { GoogleMapApi } from './google-maps-api';
@@ -23,7 +21,6 @@ export class GoogleMap {
     @ViewChild("map") private mapElement: ElementRef;
 
     private DefaultZoomLevel = 16;
-    private apiKey: string;
     private map: google.maps.Map;
     private googleMapApi: GoogleMapApi = new GoogleMapApi();
     private mapInitialized: boolean = false;

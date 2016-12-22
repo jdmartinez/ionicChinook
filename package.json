@@ -1,6 +1,5 @@
 {
   "name": "ionic-chinook",
-  "version": "0.1",
   "author": "Juan Diego Martínez",
   "homepage": "https://github.com/jdmartinez/ionicChinook/",
   "private": true,
@@ -26,7 +25,7 @@
     "zone.js": "0.6.26"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "0.0.47",
+    "@ionic/app-scripts": "0.0.48",
     "typescript": "^2.0.9"
   },
   "description": "ionicChinook: An Ionic project",

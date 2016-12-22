@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Network } from 'ionic-native';
-import { Platform } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 
 declare var Connection;

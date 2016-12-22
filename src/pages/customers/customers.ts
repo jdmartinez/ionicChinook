@@ -1,6 +1,6 @@
 import { CustomerProvider } from './../../providers/customer-provider';
 import { Customer } from './../../models/customer';
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Geolocation } from 'ionic-native';
 
 import { NavController } from 'ionic-angular';
